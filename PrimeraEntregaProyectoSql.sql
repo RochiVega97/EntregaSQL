@@ -61,5 +61,12 @@ PRIMARY KEY (id_cliente),
 foreign key (id_sucursal) references sucursal (id_sucursal),
 foreign key (id_cuenta) references cuenta (id_cuenta)
 );
-
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (1, 'gold',20000,3);
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (2, 'clasic',10000,1);
+insert into tarjetas (id_tarjeta,tipo_tarjeta,marca_tarjeta,id_cuenta,limite_max,limite_disponible) values (1,'credito','visa',1, 15000,10000);
+insert into transacciones (id_transaccion,descripcion,id_cuenta,fecha,estado) values (1,'retiro efectivo cajero',1,01/01/2022,1);
+insert into sucursal (id_sucursal,nombre,direccion) values (1,'casa central','paraguay 777');
+insert into empleados (id_empleado,id_sucursal,nombre,apellido,sueldo,antiguedad) values(1,1,'Rocio','Vega',1000,2);
+insert into cajeros (id_cajero,id_sucursal,direccion,saldo_actual) values(1,1,'paraguay 777',3000000);
+insert into clientes (id_cliente,id_cuenta,id_sucursal,nombre,apellido) values(1,1,1,'Belen','Vega');
 
