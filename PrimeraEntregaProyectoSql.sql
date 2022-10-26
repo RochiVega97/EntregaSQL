@@ -69,4 +69,40 @@ insert into sucursal (id_sucursal,nombre,direccion) values (1,'casa central','pa
 insert into empleados (id_empleado,id_sucursal,nombre,apellido,sueldo,antiguedad) values(1,1,'Rocio','Vega',1000,2);
 insert into cajeros (id_cajero,id_sucursal,direccion,saldo_actual) values(1,1,'paraguay 777',3000000);
 insert into clientes (id_cliente,id_cuenta,id_sucursal,nombre,apellido) values(1,1,1,'Belen','Vega');
+INSERT INTO cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas)
+VALUES
+  (3,"clasic",53,2),
+  (4,"black",465,1),
+  (5,"black",428,3),
+  (6,"clasic",18,0),
+  (7,"clasic",839,3),
+  (8,"black",493,4),
+  (9,"clasic",996,4),
+  (10,"clasic",922,1),
+  (12,"clasic",77,1),
+  (11,"gold",412,1);
+INSERT INTO cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas)
+VALUES
+  (13,"gold",734,1),
+  (14,"clasic",418,2),
+  (15,"gold",114,4),
+  (16,"clasic",956,5),
+  (17,"clasic",954,2),
+  (18,"gold",764,3),
+  (19,"clasic",161,3),
+  (20,"gold",801,2),
+  (21,"clasic",459,2),
+  (22,"black",745,3);
+INSERT INTO cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas)
+VALUES
+  (23,"clasic",5,3),
+  (24,"clasic",126,5),
+  (25,"gold",218,1),
+  (26,"clasic",461,4),
+  (27,"black",496,4),
+  (28,"black",278,4),
+  (29,"black",274,1),
+  (30,"black",735,1),
+  (31,"clasic",269,5),
+  (32,"black",234,4);
 
