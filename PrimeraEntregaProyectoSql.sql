@@ -105,4 +105,27 @@ VALUES
   (30,"black",735,1),
   (31,"clasic",269,5),
   (32,"black",234,4);
-
+INSERT INTO  tarjetas (id_tarjeta,tipo_tarjeta,marca_tarjeta,id_cuenta,limite_max,limite_disponible)
+VALUES
+  (2,"credito","visa",1,6059,4410),
+  (3,"credito","mastercard",2,9200,2485),
+  (4,"credito","visa",3,5034,103),
+  (5,"credito","mastercard",4,9939,2071),
+  (6,"credito","mastercard",5,42090,7754),
+  (7,"credito","visa",6,9957,1586),
+  (8,"credito","mastercard",7,60500,9559),
+  (9,"credito","mastercard",8,40200,6789),
+  (10,"credito","visa",9,9969,4101),
+  (11,"credito","mastercard",10,55190,9430);
+INSERT INTO tarjetas (id_tarjeta,tipo_tarjeta,marca_tarjeta,id_cuenta,limite_max,limite_disponible)
+VALUES
+  (12,"credito","mastercard",11,10570,3001),
+  (13,"credito","visa",12,25609,8124),
+  (14,"credito","mastercard",13,9227,2758),
+  (15,"credito","visa",14,9819,1301),
+  (16,"credito","visa",15,2780,465),
+  (17,"credito","mastercard",16,6619,694),
+  (18,"credito","mastercard",17,6463,602),
+  (19,"credito","visa",18,1725,947),
+  (20,"credito","mastercard",19,4815,521),
+  (21,"credito","visa",20,8753,6023);
