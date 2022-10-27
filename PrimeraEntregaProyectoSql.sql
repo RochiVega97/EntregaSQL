@@ -134,4 +134,7 @@ VALUES
   (2,"solicitud de prestado",1,01/07/2021,"1"),
   (3,"solicitud de prestado",2,11/08/2021,"1"),
   (4,"solicitud de prestado",3,10/08/2021,"1");
-
+insert into sucursal (id_sucursal,nombre,direccion) 
+values 
+	(2,'centro','entre rios 1200'),
+  (3,'Fisherton','eva peron 600');
