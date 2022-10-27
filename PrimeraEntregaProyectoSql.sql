@@ -129,3 +129,9 @@ VALUES
   (19,"credito","visa",18,1725,947),
   (20,"credito","mastercard",19,4815,521),
   (21,"credito","visa",20,8753,6023);
+INSERT INTO transacciones (id_transaccion,descripcion,id_cuenta,fecha,estado)
+VALUES
+  (2,"solicitud de prestado",1,01/07/2021,"1"),
+  (3,"solicitud de prestado",2,11/08/2021,"1"),
+  (4,"solicitud de prestado",3,10/08/2021,"1");
+
