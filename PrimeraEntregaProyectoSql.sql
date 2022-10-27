@@ -136,5 +136,20 @@ VALUES
   (4,"solicitud de prestado",3,10/08/2021,"1");
 insert into sucursal (id_sucursal,nombre,direccion) 
 values 
-	(2,'centro','entre rios 1200'),
+  (2,'centro','entre rios 1200'),
   (3,'Fisherton','eva peron 600');
+INSERT INTO empleados (id_empleado,id_sucursal,nombre,apellido,sueldo,antiguedad)
+VALUES
+  (2,2,"Rowan","Lacy",9459,1),
+  (3,2,"Akeem","Jenna",8240,7),
+  (4,3,"Hashim","Serina",6304,10),
+  (5,2,"Yen","Macaulay",9251,23),
+  (6,1,"Rashad","Herman",5508,0);
+INSERT INTO clientes (id_cliente,id_cuenta,id_sucursal,nombre,apellido)
+VALUES
+  (2,1,1,"Quinlan","Isaac"),
+  (3,2,3,"Karen","Yuli"),
+  (4,3,3,"Lillith","Tarik"),
+  (5,4,2,"Acton","Kyla"),
+  (6,5,2,"Lyle","Walker");
+
