@@ -152,4 +152,26 @@ VALUES
   (4,3,3,"Lillith","Tarik"),
   (5,4,2,"Acton","Kyla"),
   (6,5,2,"Lyle","Walker");
-
+create view clientes_cuenta as
+	(select cl.nombre, cl.apellido, cl.id_cuenta, c.cant_tarjetas, c.limite_cuenta, c.tipo_cuenta
+	from clientes as cl
+	inner join cuenta as c 
+  on cl.id_cuenta=c.id_cuenta);
+create view transacciones_aprobadas as
+	(select *
+	from transacciones
+	where estado=1);
+create view clientes_tarjetas as
+	(select c.nombre, c.apellido, c.id_cuenta, t.marca_tarjeta, t.tipo_tarjeta, t.limite_disponible, t.limite_max
+	from clientes as c
+	inner join tarjetas as t
+  on c.id_cuenta=t.id_cuenta);
+create view empleados_sucursal as
+	(select e.nombre, e.apellido, e.antiguedad, s.direccion
+	from empleados as e
+	inner join sucursal as s
+  on e.id_sucursal=s.id_sucursal);
+create view empleados_con_antiguedad as
+	(select *
+	from empleados as e
+	where e.antiguedad>0);
