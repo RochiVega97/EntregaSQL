@@ -175,3 +175,9 @@ create view empleados_con_antiguedad as
 	(select *
 	from empleados as e
 	where e.antiguedad>0);
+CREATE FUNCTION `calculateSalararioConAntiguedad`(antiguedad INT, salario DECIMAL) RETURNS DECIMAL DETERMINISTIC
+BEGIN
+	DECLARE fullSalary float;
+	SET fullSalary = salario+salario*antiguedad*0.1;
+RETURN fullsalary;
+END;
