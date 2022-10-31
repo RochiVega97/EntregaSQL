@@ -181,3 +181,9 @@ BEGIN
 	SET fullSalary = salario+salario*antiguedad*0.1;
 RETURN fullsalary;
 END;
+CREATE FUNCTION `nuevo_limite_max`(limite_max float) RETURNS float DETERMINISTIC
+BEGIN
+	DECLARE nuevo_limite_max float;
+	SET nuevo_limite_max = limite_max*1.5;
+RETURN nuevo_limite_max;
+END;
