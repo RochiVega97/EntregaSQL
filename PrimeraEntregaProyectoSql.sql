@@ -187,7 +187,7 @@ BEGIN
 	SET nuevo_limite_max = limite_max*1.5;
 RETURN nuevo_limite_max;
 END;
-
+-- PROCEDIMIENTO QUE ORDENA TABLA CUENTA EN FUNCION DEL CAMPO PASADO COMO PARAMETRO Y EL TIPO DE ORDENAMIENTO PASADO COMO PARAMETRO
 DELIMITER &&  
 CREATE PROCEDURE sort_tabla_cuenta (IN campo_order varchar (255), IN tipo_orden varchar(255) )  
 BEGIN  
@@ -196,5 +196,12 @@ FROM cuenta ORDER BY (',campo_order,')',tipo_orden);
     PREPARE stmt FROM @query;
     EXECUTE stmt;
     DEALLOCATE PREPARE stmt;  
+END &&  
+DELIMITER ;  
+-- PROCEDIMIENTO QUE INSERTA DATA EN SUCURSAL
+DELIMITER &&  
+CREATE PROCEDURE insert_data_sucursal (IN id_sucursal_new int, IN nombre_new varchar(255), in direccion_new varchar(255) )  
+BEGIN  
+	insert into sucursal(id_sucursal, nombre, direccion) values (id_sucursal_new, nombre_new,direccion_new);
 END &&  
 DELIMITER ;  
