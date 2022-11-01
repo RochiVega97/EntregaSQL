@@ -187,3 +187,14 @@ BEGIN
 	SET nuevo_limite_max = limite_max*1.5;
 RETURN nuevo_limite_max;
 END;
+
+DELIMITER &&  
+CREATE PROCEDURE sort_tabla_cuenta (IN campo_order varchar (255), IN tipo_orden varchar(255) )  
+BEGIN  
+	SET @query = CONCAT ('SELECT *
+FROM cuenta ORDER BY (',campo_order,')',tipo_orden);
+    PREPARE stmt FROM @query;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;  
+END &&  
+DELIMITER ;  
