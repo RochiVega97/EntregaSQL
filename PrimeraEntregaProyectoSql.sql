@@ -205,3 +205,22 @@ BEGIN
 	insert into sucursal(id_sucursal, nombre, direccion) values (id_sucursal_new, nombre_new,direccion_new);
 END &&  
 DELIMITER ;  
+
+drop table if exists Log_auditoria;
+Create table if not exists Log_auditoria 
+(id_log int auto_increment, 
+nombre_accion varchar (20), 
+nombre_tabla varchar (20), 
+usuario varchar (20), 
+fecha date, 
+primary key (id_log));
+
+DELIMITER &&  
+Create trigger TRG_LOG_EMPLEADOS after insert on empleados
+for each row
+begin
+
+insert into Log_auditoria (nombre_accion, nombre_tabla, usuario, fecha)
+values ('INSERT','empleados',current_user(),now());
+end && 
+DELIMITER ;
