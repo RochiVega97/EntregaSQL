@@ -224,3 +224,13 @@ insert into Log_auditoria (nombre_accion, nombre_tabla, usuario, fecha)
 values ('INSERT','empleados',current_user(),now());
 end && 
 DELIMITER ;
+
+DELIMITER &&  
+Create trigger TRG_LOG_EMPLEADOS_update after update on empleados
+for each row
+begin
+
+insert into Log_auditoria (nombre_accion, nombre_tabla, usuario, fecha)
+values ('UPDATE','empleados',current_user(),now());
+end && 
+DELIMITER ;
