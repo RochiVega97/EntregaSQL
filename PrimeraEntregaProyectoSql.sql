@@ -234,3 +234,43 @@ insert into Log_auditoria (nombre_accion, nombre_tabla, usuario, fecha)
 values ('UPDATE','empleados',current_user(),now());
 end && 
 DELIMITER ;
+
+
+drop table if exists Movimientos_auditoria;
+Create table if not exists Movimientos_auditoria 
+(id_log int auto_increment, 
+nombre_accion varchar (20), 
+nombre_tabla varchar (20), 
+usuario varchar (20), 
+fecha date, 
+campo_modificado varchar (20),
+primary key (id_log));
+
+DELIMITER &&  
+Create trigger TRG_LOG_clientes_update after update on clientes
+for each row
+begin
+
+insert into Movimientos_auditoria (nombre_accion, nombre_tabla, usuario, fecha, hora, campo_modificado)
+values ('UPDATE','clientes',current_user(),now(),current_time(),old.nombre);
+end && 
+DELIMITER ;
+
+DROP TABLE IF EXISTS cuentaArchivos;    
+
+CREATE TABLE cuentaArchivos (
+    id_cuenta INT PRIMARY KEY AUTO_INCREMENT,
+    numero_cuenta INT,
+    deletedAt TIMESTAMP DEFAULT NOW()
+);
+DELIMITER $$
+
+CREATE TRIGGER before_cuenta_delete
+BEFORE DELETE
+ON cuenta FOR EACH ROW
+BEGIN
+    INSERT INTO cuentaArchivos(numero_cuenta)
+    VALUES(OLD.id_cuenta);
+END$$    
+
+DELIMITER ;
