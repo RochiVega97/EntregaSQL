@@ -287,7 +287,7 @@ DELETE FROM clientes where id_cliente = 2;
 DELETE FROM clientes where id_cliente = 3;
 DELETE FROM clientes where id_cliente = 4;
 DELETE FROM clientes where id_cliente = 5;
-rollback;
+-- rollback;
 commit;
 
 START TRANSACTION;
@@ -301,3 +301,4 @@ insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (6
 insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (66, 'black',5000,1);
 insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (67, 'clasic',1000,1);
 savepoint lote_2;
+-- rollback to lote_1;
