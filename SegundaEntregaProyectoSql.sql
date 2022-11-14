@@ -274,3 +274,17 @@ BEGIN
 END$$    
 
 DELIMITER ;
+
+use PROYECTO;
+
+SELECT @@autocommit;
+SET @@autocommit=0;
+SET SQL_SAFE_UPDATES=0;
+
+DELETE FROM clientes where id_cliente = 1;
+DELETE FROM clientes where id_cliente = 2;
+DELETE FROM clientes where id_cliente = 3;
+DELETE FROM clientes where id_cliente = 4;
+DELETE FROM clientes where id_cliente = 5;
+rollback;
+commit;
