@@ -275,6 +275,7 @@ END$$
 
 DELIMITER ;
 
+START TRANSACTION;
 use PROYECTO;
 
 SELECT @@autocommit;
@@ -288,3 +289,15 @@ DELETE FROM clientes where id_cliente = 4;
 DELETE FROM clientes where id_cliente = 5;
 rollback;
 commit;
+
+START TRANSACTION;
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (60, 'gold',2000,2);
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (61, 'black',20000,5);
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (62, 'black',20000,3);
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (63, 'gold',2000,3);
+savepoint lote_1;
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (64, 'clasic',20000,2);
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (65, 'gold',18000,4);
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (66, 'black',5000,1);
+insert into cuenta (id_cuenta,tipo_cuenta,limite_cuenta,cant_tarjetas) values (67, 'clasic',1000,1);
+savepoint lote_2;
